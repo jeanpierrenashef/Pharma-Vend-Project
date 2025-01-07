@@ -10,11 +10,13 @@
 > Our solution features an interactive robotic system and an AI-trained model for pattern recognition across various areas. Additionally, we offer a user-friendly interface that helps users locate nearby vending machines and enables real-time communication with the system. This approach streamlines access to essential pharmaceuticals and enhances the overall user experience.
 
 ### User Stories
-- As a user, I want to locate nearby vending machines, so I can quickly access essential pharmaceuticals when pharmacies are closed.
-- As a user, I want to browse available medicines and their details, so I can find and select the medication I need.
-- As a user, I want the system to recommend medicines based on my input, so I can make informed decisions about what to buy.
 
-### Admin Stories
+## Customer
+- As a Customer, I want to locate nearby vending machines, so I can quickly access essential pharmaceuticals when pharmacies are closed.
+- As a Customer, I want to browse available medicines and their details, so I can find and select the medication I need.
+- As a Customer, I want the system to guide me to the machine and allow me to shop and dispense medicantions of my choice.
+
+## Admin 
 - As an admin, I want to manage and monitor the stock levels in vending machines, so I can restock them promptly to avoid shortages.
 - As an admin, I want to review and analyze sales data, so I can identify trends and improve vending machine performance.
 - As an admin, I want the vending machine inventory to be updated in real time and reflected accurately to users, ensuring credibility and trust in the system.
