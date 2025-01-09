@@ -43,7 +43,9 @@
 
 ### Mockups
 | Landing screen  | Map Screen | Home Screen | Details Screen | Cart Screen | Checkout Screen | History Screen | Dispense Screen
-| ---| ---| ---| ---| ---| ---| ---| ---|
+| ---| ---| ---| 
+| ---| ---| ---| 
+| ---| ---|
 | ![Landing](./readme/demo/landing.png) | ![Map](./readme/demo/map.png) | ![Home](./readme/demo/home.png) | ![DETAILS](./readme/demo/details.png) | ![Cart](./readme/demo/cart.png) | ![Checkout](./readme/demo/checkout.png) | ![History](./readme/demo/history.png) | ![Dispense](./readme/demo/dispense.png)
 
 <br><br>
