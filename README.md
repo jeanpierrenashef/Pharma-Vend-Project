@@ -46,13 +46,13 @@
 |-------------------------------|--------------------------|--------------------------|
 | ![Landing](./readme/demo/landing.png) | ![Map](./readme/demo/map.png) | ![Home](./readme/demo/home.png) |
 
-| Details Screen                | Cart Screen             | Checkout Screen          |
+| Details Screen                | Cart Screen             | Checkout Screen           |
 |-------------------------------|--------------------------|--------------------------|
 | ![Details](./readme/demo/details.png) | ![Cart](./readme/demo/cart.png) | ![Checkout](./readme/demo/checkout.png) |
 
-| History Screen                | Dispense Screen          |                          |
+| History Screen                | Dispense Screen          | Landing #2               |
 |-------------------------------|--------------------------|--------------------------|
-| ![History](./readme/demo/history.png) | ![Dispense](./readme/demo/dispense.png) | ![Landing2](./readme/demo/landing2.png)  |
+| ![History](./readme/demo/history.png) | ![Dispense](./readme/demo/dispense.png) | ![Landing2](./readme/demo/landing2.png) |
 
 <br><br>
 
