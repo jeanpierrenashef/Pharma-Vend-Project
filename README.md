@@ -24,7 +24,7 @@
 <!-- Tech stack -->
 <img src="./readme/title3.svg"/>
 
-###  PharmaVend is built using the following technologies:
+###  PharmaVend is -built using the following technologies:
 
 - This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
 - For backend development, the app uses [Laravel](https://laravel.com/), a PHP-based framework known for its scalability and robust API handling capabilities.
@@ -36,15 +36,15 @@
 <img src="./readme/title4.svg"/>
 
 
-> We designed Coffee Express using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
+> We designed PharmaVend using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 
-- Project Figma design [figma](https://www.figma.com/file/LsuOx5Wnh5YTGSEtrgvz4l/Purrfect-Pals?type=design&node-id=257%3A79&mode=design&t=adzbABt5hbb91ucZ-1)
+- Project Figma design [figma](https://www.figma.com/design/7ouYeUwMOHD4Q3yAhSmUx7/Final-project?node-id=0-1&p=f&t=3UV9S1T6sdou9NPQ-0)
 
 
 ### Mockups
-| Home screen  | Menu Screen | Order Screen |
-| ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| Landing screen  | Map Screen | Home Screen | Details Screen | Cart Screen | Checkout Screen | History Screen | Dispense Screen
+| ---| ---| ---| ---| ---| ---| ---| ---|
+| ![Landing](./readme/demo/landing.png) | ![Map](./readme/demo/map.png) | ![Home](./readme/demo/home.png) | ![DETAILS](./readme/demo/details.png) | ![Cart](./readme/demo/cart.png) | ![Checkout](./readme/demo/checkout.png) | ![History](./readme/demo/history.png) | ![Dispense](./readme/demo/dispense.png)
 
 <br><br>
 
