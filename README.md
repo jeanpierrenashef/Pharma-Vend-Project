@@ -52,7 +52,7 @@
 
 | History Screen                | Dispense Screen          |                          |
 |-------------------------------|--------------------------|--------------------------|
-| ![History](./readme/demo/history.png) | ![Dispense](./readme/demo/dispense.png) |                          |
+| ![History](./readme/demo/history.png) | ![Dispense](./readme/demo/dispense.png) | ![Landing2](./readme/demo/landing2.png)  |
 
 <br><br>
 
