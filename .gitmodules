@@ -1,3 +1,15 @@
 [submodule "PharmaVend-app"]
 	path = PharmaVend-app
 	url = https://github.com/jeanpierrenashef/PharmaVend-app
+[submodule "PharmaVend-server"]
+	path = PharmaVend-server
+	url = https://github.com/jeanpierrenashef/PharmaVend-server
+[submodule "PharmaVend-adminPanel"]
+	path = PharmaVend-adminPanel
+	url = https://github.com/jeanpierrenashef/PharmaVend-adminPanel
+[submodule "PharmaVend-web"]
+	path = PharmaVend-web
+	url = https://github.com/jeanpierrenashef/PharmaVend-web
+[submodule "PharmaVend-IoT"]
+	path = PharmaVend-IoT
+	url = https://github.com/jeanpierrenashef/PharmaVend-IoT
