@@ -76,8 +76,6 @@
 
 ###  Architecting Data Excellence: Innovative Database Design Strategies:
 
-- Insert ER Diagram here
-
 
 <p align="center">
   <img src="./readme/demo/DB-schema.png" alt="ER Diagram">
@@ -191,6 +189,82 @@ Machine Deployment
 > To build PharmaVend prototype, follow these steps:
 
 ### Electrical Components Connections
+<!-- - To drive Stepper Motor with A4988 IC and Linear Motors with L298n IC on an esp, you need to follow these steps: -->
+#### I. Stepper Motor with A4988 IC Conenction
+
+- 1- Prerequesits
+   - ESP32/8266 module
+   - Stepper Motor (preferable Nema 17)
+   - Stepper Motor Driver A4988 IC
+   - Battery (9-12V)
+
+- 2- Overview
+   - **Stepper Motor phase output pin order**:
+      The stepper motor in our application have a wiring of A+, A-, B+ and B- which power the phase in proper sequence.
+   - **MSx pins on the A4988 driver IC**: 
+      The driver IC contains three input pins. You can set the pins to control the micro-stepping resolution. 
+
+     | MS1 | MS2 | MS3 | Microstep Resolution | Excitation Mode |
+     |-----|-----|-----|----------------------|-----------------|
+     | L   | L   | L   | Full Step            | 2 phase         <---**Method Utilizied**| 
+     | H   | L   | L   | Half Step            | 1-2 phase       |
+     | L   | H   | L   | Quarter Step         | W1-2 phase      |
+     | H   | H   | L   | Eight Step           | 2W1-2 phase     |
+     | H   | H   | H   | Sixteenth Step       | 4W1-2 phase     |
+
+- 3- Connections
+   | A4988 Connections   | ESP32 Pins | Stepper Motor Connections |
+   |---------------------|------------|--------------------------|
+   | DIR                 | GPIO 15    |                          |
+   | STEP                | GPIO 2     |                          |
+   | ENABLE              | GPIO 13    |                          |
+   | VCC                 | 3.3V/5V    |                          |
+   | GND                 | GND        | GND                      |
+   | Motor Output A+     |            | Coil 1+                  |
+   | Motor Output A-     |            | Coil 1-                  |
+   | Motor Output B+     |            | Coil 2+                  |
+   | Motor Output B-     |            | Coil 2-                  |
+
+![Stepper Motor Connection](./readme/demo/steppermotor.png)
+
+#### II. Linear DC Motors with L298n Driver
+
+- 1- Prerequesits
+   - ESP32/8266 module
+   - 2x Linear DC Motors
+   - Motor Driver L298n Driver
+   - Battery (9-12V)
+
+- 2- Overview
+   - **DC Motor Configurations**: 
+      If you want to build a robot car using 2 DC motors, these should be rotating in specific directions to make the robot go left, right, forward, or backward.
+
+   | DIRECTION | INPUT 1 | INPUT 2 | INPUT 3 | INPUT 4 |
+   |-----------|---------|---------|---------|---------|
+   | Forward   | 0       | 1       | 0       | 1       |
+   | Backward  | 1       | 0       | 1       | 0       |
+   | Right     | 0       | 1       | 0       | 0       |
+   | Left      | 0       | 0       | 1       | 0       |
+   | Stop      | 0       | 0       | 0       | 0       |
+
+- 3- Connections
+   | Description         | ESP32 Pin | L298N Connection | Note                  |
+   |---------------------|-----------|------------------|-----------------------|
+   | Motor 1 Extend      | GPIO 26   | Input 1          | Motor 1 direction     |
+   | Motor 1 Retract     | GPIO 27   | Input 2          | Motor 1 direction     |
+   | Motor 1 Enable      | GPIO 13   | Enable 1         | Enable Motor 1        |
+   | Motor 2 Forward     | GPIO 33   | Input 3          | Motor 2 direction     |
+   | Motor 2 Backward    | GPIO 32   | Input 4          | Motor 2 direction     |
+   | Motor 2 Enable      | EN        | Enable 2         | Enable Motor 2        |
+   | Power Supply (VCC)  |           | VCC              | 9V DC Battery |
+   | Ground (GND)        |           | GND              | Common ground connection |
+
+![Linear Motors Connection](./readme/demo/lineardcmotors.png)
+
+#### III. Combined Connection of the whole robotic system
+![Combined Connection](./readme/demo/combined.png)
+
+
 ### Mechanical Engineering Design
 ### Real Time Demo
 
