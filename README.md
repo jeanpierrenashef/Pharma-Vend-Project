@@ -102,6 +102,10 @@
 |-------------------------------|--------------------------|--------------------------|
 | ![Checkout](./readme/demo/paymedicine.gif) | ![Search](./readme/demo/search.gif) | ![Notification](./readme/demo/notification.gif) | 
 
+| Map Navigation Demo                | 
+|-------------------------------|
+| ![Checkout](./readme/demo/maps.gif) | 
+
 ### Admin Screens (Web)
 | Login screen  | Register screen |  Landing screen  |
 | ---| ---| ---|
