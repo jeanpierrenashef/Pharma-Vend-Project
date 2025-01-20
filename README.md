@@ -29,12 +29,17 @@
 - This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
 - For backend development, the app uses [Laravel](https://laravel.com/), a PHP-based framework known for its scalability and robust API handling capabilities.
 - The user and admin panel websites are built using [React](https://react.dev/), a front-end library that delivers a dynamic and interactive interface.
-- The application enhances its functionality with several Google APIs, each serving a unique purpose:
-  - **Maps JavaScript API**: Provides interactive maps and location features on the application and admin panels. [Learn more](https://developers.google.com/maps/documentation/javascript/overview).
-  - **Geolocation API**: Allows the app to retrieve the current location of the user by accepting an HTTPS request with the cell tower and WiFi access points that a mobile client can detect. [Learn more](https://developers.google.com/maps/documentation/geolocation/overview).
-  - **Distance Matrix API**: Calculates travel distance and time for a matrix of origins and destinations, useful for managing delivery times and logistics. [Learn more](https://developers.google.com/maps/documentation/distance-matrix/overview).
-  - **Directions API**: Supplies route directions between multiple locations which are used to plot navigational routes on the map. [Learn more](https://developers.google.com/maps/documentation/directions/overview).
-  - **Reverse Geocoding API**: Converts geographic coordinates into a human-readable address. [Learn more](https://developers.google.com/maps/documentation/geocoding/overview).
+- Both the Flutter application and the user admin panel employ [Redux](https://redux.js.org/) for state management. This predictable state container facilitates the handling of state across all user interfaces, enhancing manageability and cleanliness in dynamic and complex applications.
+
+- The application enhances its functionality with several [Google APIs](https://console.cloud.google.com/apis/dashboard?inv=1&invt=AbnWKg), each serving a unique purpose:
+  -  [Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview): Provides interactive maps and location features on the application and admin panels.
+  - [Geolocation API](https://developers.google.com/maps/documentation/geolocation/overview): Allows the app to retrieve the current location of the user by accepting an HTTPS request with the cell tower and WiFi access points that a mobile client can detect. 
+  -  [Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/overview).: Calculates travel distance and time for a matrix of origins and destinations, useful for managing delivery times and logistics.
+  - [Directions API](https://developers.google.com/maps/documentation/directions/overview): Supplies route directions between multiple locations which are used to plot navigational routes on the map. 
+  - [Reverse Geocoding API](https://developers.google.com/maps/documentation/geocoding/overview): Converts geographic coordinates into a human-readable address. 
+- The project leverages [Firebase](https://console.firebase.google.com/), a comprehensive app development platform by Google, known for its wide array of tools and services:
+  - [Google Sign in](https://firebase.google.com/docs/auth/android/google-signin): Integrated for secure and quick user authentication using Google accounts.
+  - [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging): Used for dispatching notifications to enhance user interaction and app communication.
 - The IoT integration is powered by the [Arduino Platform](https://www.arduino.cc/), utilizing the [ESP32 microcontroller](https://www.espressif.com/en/products/socs/esp32) to control actuators for precise and reliable dispensing of products.
 
 
@@ -144,64 +149,166 @@ Machine Navigation
 Machine Deployment
 
 ![Admin #2](./readme/demo/admin2.gif)
+
+### Customer Screen (Web)
+![Customer](./readme/demo/customerweb.gif)
 <br><br>
 
 
-<!-- Prompt Engineering -->
+<!-- Prompt Engineering
 <img src="./readme/title7.svg"/>
 
 ###  Mastering AI Interaction: Unveiling the Power of Prompt Engineering:
 
 - This project uses advanced prompt engineering techniques to optimize the interaction with natural language processing models. By skillfully crafting input instructions, we tailor the behavior of the models to achieve precise and efficient language understanding and generation for various tasks and preferences.
 
-<br><br>
+<br><br> -->
 
-<!-- AWS Deployment -->
+<!-- AWS Deployment
 <img src="./readme/title8.svg"/>
 
 ###  Efficient AI Deployment: Unleashing the Potential with AWS Integration:
 
 - This project leverages AWS deployment strategies to seamlessly integrate and deploy natural language processing models. With a focus on scalability, reliability, and performance, we ensure that AI applications powered by these models deliver robust and responsive solutions for diverse use cases.
 
-<br><br>
+<br><br> -->
 
-<!-- Unit Testing -->
+<!-- Unit Testing
 <img src="./readme/title9.svg"/>
 
 ###  Precision in Development: Harnessing the Power of Unit Testing:
 
 - This project employs rigorous unit testing methodologies to ensure the reliability and accuracy of code components. By systematically evaluating individual units of the software, we guarantee a robust foundation, identifying and addressing potential issues early in the development process.
 
-<br><br>
+<br><br> -->
 
 
 <!-- How to run -->
 <img src="./readme/title10.svg"/>
 
-> To set up Coffee Express locally, follow these steps:
+> To set up PharmaVend locally, follow these steps:
 
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
+
 * npm
   ```sh
   npm install npm@latest -g
   ```
-
+- Flutter SDK
+- Composer (for PHP dependencies)
+- Arduino IDE
+- ESP32/8266 module
+- Google Cloud Platform (GCP) project with the following enabled:
+   - Maps JavaScript
+   - Geolocation
+   - Distance Matrix
+   - Directions
+   - Reverse Geocoding
+- Firebase CLI
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+#### Cloning the Repository
 
-1. Get a free API Key at [example](https://example.com)
-2. Clone the repo
-   git clone [github](https://github.com/your_username_/Project-Name.git)
-3. Install NPM packages
+1. Run the following command to clone the repository and all its submodules
+
+   ```sh
+   git clone --recurse-submodules [github](https://github.com/jeanpierrenashef/PharmaVend.git)
+   ```
+
+#### Server Configuration (Laravel)
+
+1. Navigate to PharmaVend-server directory
+
+   ```sh
+   cd PharmaVend-server
+   ```
+
+2. Install composer packages
+   ```sh
+   composer install
+   ```
+3. Run the following command and fill the necessary values in the created .env file
+   ```sh
+   cp .env.example .env
+   ```
+4. Run the following command to populate the database
+   ```sh
+   php artisan migrate
+   ```
+5. Start the Laravel development server
+   ```sh
+   php artisan serve
+   ```
+#### Application Configuration (Flutter)
+
+1. Install Flutter SDK
+
+2. Navigate to PharmaVend-app directory
+
+   ```sh
+   cd PharmaVend-app
+   ```
+
+3. Install the required packages as defined in the pubspec.yaml file
+
+   ```sh
+   flutter pub get
+   ```
+
+4. Run the following command and fill the necessary values in the created .env file
+
+   ```sh
+   cp .env.example .env
+   ```
+
+5. Make sure Firebase CLI is installed on your machine. If not, install it using the following commands. This CLI tool helps connect your Flutter project with your Firebase project.
+   ```sh
+   dart pub global activate flutterfire_cli
+   flutterfire configure
+   ```
+6. Run the Flutter application
+   ```sh
+   flutter run
+   ```
+
+#### Admin Panel Configuration (ReactJS)
+
+1. Navigate to PharmaVend-adminPanel directory
+
+   ```sh
+   cd PharmaVend-adminPanel
+   ```
+
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Run the following command and fill the necessary values in the created .env file
+   ```sh
+   cp .env.example .env
+   ```
+4. Run the React project
+   ```sh
+   npm run start
    ```
 
-Now, you should be able to run Coffee Express locally and explore its features.
+#### Arduino Configuration
+
+1. Navigate to PharmaVend-IoT directory
+
+   ```sh
+   cd PharmaVend-IoT
+   ```
+
+2. Set the variables in wifi.cpp file according to your network and sever
+
+   ```cpp
+   const char* ssid = "<Network-ssid>";
+   const char* password = "<Network-password>";
+   ```
+
+3. Follow the steps mentioned above in the IoT System section for connections
+
+Now, you should be able to run PharmaVend locally and explore its features.
