@@ -96,7 +96,11 @@
 #### Interactive Walkthrough
 | Sign Up Demo                | Google Signin Demo               | Find Closest Machine               | 
 |-------------------------------|--------------------------|--------------------------|
-| ![Sign up](./readme/demo/signup.gif) | ![Google](./readme/demo/googlesignin.gif) | ![Closest](./readme/demo/closestmachine.gif) | 
+| ![Sign up](./readme/demo/signup.gif) | ![Google](./readme/demo/googlesignin.gif) | ![Closest](./readme/demo/closest.gif) | 
+
+| Checkout Demo                | Search medicine Demo               | Notification Update               | 
+|-------------------------------|--------------------------|--------------------------|
+| ![Checkout](./readme/demo/paymedicine.gif) | ![Search](./readme/demo/search.gif) | ![Notification](./readme/demo/notification.gif) | 
 
 ### Admin Screens (Web)
 | Login screen  | Register screen |  Landing screen  |
