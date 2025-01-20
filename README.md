@@ -29,13 +29,14 @@
 - This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
 - For backend development, the app uses [Laravel](https://laravel.com/), a PHP-based framework known for its scalability and robust API handling capabilities.
 - The user and admin panel websites are built using [React](https://react.dev/), a front-end library that delivers a dynamic and interactive interface.
--The application enhances its functionality with several Google APIs, each serving a unique purpose:
-- **Maps JavaScript API**: Provides interactive maps and location features on the application and admin panels. [Learn more](https://developers.google.com/maps/documentation/javascript/overview).
-- **Geolocation API**: Allows the app to retrieve the current location of the user by accepting an HTTPS request with the cell tower and WiFi access points that a mobile client can detect. [Learn more](https://developers.google.com/maps/documentation/geolocation/overview).
-- **Distance Matrix API**: Calculates travel distance and time for a matrix of origins and destinations, useful for managing delivery times and logistics. [Learn more](https://developers.google.com/maps/documentation/distance-matrix/overview).
-- **Directions API**: Supplies route directions between multiple locations which are used to plot navigational routes on the map. [Learn more](https://developers.google.com/maps/documentation/directions/overview).
-- **Reverse Geocoding API**: Converts geographic coordinates into a human-readable address. [Learn more](https://developers.google.com/maps/documentation/geocoding/overview).
+- The application enhances its functionality with several Google APIs, each serving a unique purpose:
+  - **Maps JavaScript API**: Provides interactive maps and location features on the application and admin panels. [Learn more](https://developers.google.com/maps/documentation/javascript/overview).
+  - **Geolocation API**: Allows the app to retrieve the current location of the user by accepting an HTTPS request with the cell tower and WiFi access points that a mobile client can detect. [Learn more](https://developers.google.com/maps/documentation/geolocation/overview).
+  - **Distance Matrix API**: Calculates travel distance and time for a matrix of origins and destinations, useful for managing delivery times and logistics. [Learn more](https://developers.google.com/maps/documentation/distance-matrix/overview).
+  - **Directions API**: Supplies route directions between multiple locations which are used to plot navigational routes on the map. [Learn more](https://developers.google.com/maps/documentation/directions/overview).
+  - **Reverse Geocoding API**: Converts geographic coordinates into a human-readable address. [Learn more](https://developers.google.com/maps/documentation/geocoding/overview).
 - The IoT integration is powered by the [Arduino Platform](https://www.arduino.cc/), utilizing the [ESP32 microcontroller](https://www.espressif.com/en/products/socs/esp32) to control actuators for precise and reliable dispensing of products.
+
 
 <br><br>
 <!-- UI UX -->
@@ -138,11 +139,11 @@
 
 Machine Navigation 
 
-| ![Admin #1](./readme/demo/admin1.gif) |
+![Admin #1](./readme/demo/admin1.gif)
 
 Machine Deployment
 
-| ![Admin #2](./readme/demo/admin2.gif) |
+![Admin #2](./readme/demo/admin2.gif)
 <br><br>
 
 
