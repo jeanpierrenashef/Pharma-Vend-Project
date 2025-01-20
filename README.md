@@ -44,7 +44,7 @@
 
 | Home Screen                | Map Screen               | Checkout Screen              |
 |-------------------------------|--------------------------|--------------------------|
-| ![Home](./readme/demo/home.png) | ![Map](./readme/demo/map.png) | ![Home](./readme/demo/checkout.png) |
+| ![Home  Screen](./readme/demo/home.png) | ![Map](./readme/demo/map.png) | ![Home](./readme/demo/checkout.png) |
 <!-- 
 | Details Screen                | Cart Screen             | Checkout Screen           |
 |-------------------------------|--------------------------|--------------------------|
@@ -99,7 +99,7 @@
 | ![Login](./readme/demo/signup.gif) | ![Register](./readme/demo/signup.png) | 
 
 ### Admin Screens (Web)
-| Login screen  | Register screen |  Landing screen |
+| Login screen  | Register screen |  Landing screen  |
 | ---| ---| ---|
 | ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
 | Home screen  | Menu Screen | Order Screen |
