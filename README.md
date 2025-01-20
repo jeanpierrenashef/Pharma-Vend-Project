@@ -76,6 +76,7 @@
 
 
 ### User Screens (Mobile)
+#### Visual Overview
 | Login Screen                | Register Screen               | Landing Screen              |
 |-------------------------------|--------------------------|--------------------------|
 | ![Login](./readme/demo/login.png) | ![Register](./readme/demo/signup.png) | ![Landing](./readme/demo/landing.png) |
@@ -91,6 +92,11 @@
 | History Screen                | Dispense Screen          | Notification Screen               |
 |-------------------------------|--------------------------|--------------------------|
 | ![History](./readme/demo/history.png) | ![Dispense](./readme/demo/dispense.png) | ![Notification](./readme/demo/notification.png) |
+
+#### Interactive Walkthrough
+| Sign Up Demo                | Register Screen               | 
+|-------------------------------|--------------------------|
+| ![Login](./readme/demo/signup.gif) | ![Register](./readme/demo/signup.png) | 
 
 ### Admin Screens (Web)
 | Login screen  | Register screen |  Landing screen |
