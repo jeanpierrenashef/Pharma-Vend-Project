@@ -85,18 +85,18 @@
 |-------------------------------|--------------------------|--------------------------|
 | ![Other Landing](./readme/demo/landing2.png) | ![Home](./readme/demo/home.png) | ![Map](./readme/demo/map.png) |
 
-| Product Detail Screen                | Cart Screen          | Checkout Screen               |
+| Product Detail Screen                | Cart Display Screen          | Checkout Screen               |
 |-------------------------------|--------------------------|--------------------------|
 | ![Product Detail](./readme/demo/details.png) | ![Cart](./readme/demo/cart.png) | ![Checkout](./readme/demo/checkout.png) |
 
-| History Screen                | Dispense Screen          | Notification Screen               |
+| User History Screen                | Product Dispense Screen          | Notification Screen               |
 |-------------------------------|--------------------------|--------------------------|
 | ![History](./readme/demo/history.png) | ![Dispense](./readme/demo/dispense.png) | ![Notification](./readme/demo/notification.png) |
 
 #### Interactive Walkthrough
-| Sign Up Demo                | Register Screen               | 
-|-------------------------------|--------------------------|
-| ![Login](./readme/demo/signup.gif) | ![Register](./readme/demo/signup.png) | 
+| Sign Up Demo                | Google Signin Demo               | Find Closest Machine               | 
+|-------------------------------|--------------------------|--------------------------|
+| ![Sign up](./readme/demo/signup.gif) | ![Google](./readme/demo/googlesignin.gif) | ![Closest](./readme/demo/closestmachine.gif) | 
 
 ### Admin Screens (Web)
 | Login screen  | Register screen |  Landing screen  |
