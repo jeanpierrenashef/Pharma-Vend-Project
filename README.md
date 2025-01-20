@@ -107,11 +107,25 @@
 | ![Checkout](./readme/demo/maps.gif) | 
 
 ### Admin Screens (Web)
-| Login screen  | Register screen |  Landing screen  |
-| ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
-| Home screen  | Menu Screen | Order Screen |
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| Dashboard Screen #1  | Dashboard Screen #2 |
+| ---| ---|
+| ![Dashboard Screen #1](./readme/demo/dashboard1.png) | ![Dashboard Screen #2](./readme/demo/dashboard2.png) |
+
+| Orders Screen #1  | Orders Screen #2 |
+| ---| ---|
+| ![Orders Screen #1](./readme/demo/orders1.png) | ![Orders Screen #2](./readme/demo/orders2.png) |
+
+| Inventory Screen #1  | Inventory Screen #2 |
+| ---| ---|
+| ![Inventory Screen #1](./readme/demo/inventory1.png) | ![Inventory Screen #2](./readme/demo/inventory2.png) |
+
+| Machines Screen  | Products Screen  |
+| ---| ---|
+| ![Machines Screen](./readme/demo/machines.png) | ![Products Screen](./readme/demo/products.png) |
+
+| Customers Screen #1  | Customers Screen #2 |
+| ---| ---|
+| ![Customers Screen #1](./readme/demo/customers1.png) | ![Customers Screen #2](./readme/demo/customers2.png) |
 
 <br><br>
 
