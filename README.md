@@ -42,17 +42,17 @@
 
 ### Mockups
 
-| Landing Screen                | Map Screen               | Home Screen              |
+| Home Screen                | Map Screen               | Checkout Screen              |
 |-------------------------------|--------------------------|--------------------------|
-| ![Landing](./readme/demo/landing.png) | ![Map](./readme/demo/map.png) | ![Home](./readme/demo/home.png) |
-
+| ![Home](./readme/demo/home.png) | ![Map](./readme/demo/map.png) | ![Home](./readme/demo/checkout.png) |
+<!-- 
 | Details Screen                | Cart Screen             | Checkout Screen           |
 |-------------------------------|--------------------------|--------------------------|
 | ![Details](./readme/demo/details.png) | ![Cart](./readme/demo/cart.png) | ![Checkout](./readme/demo/checkout.png) |
 
 | History Screen                | Dispense Screen          | Landing #2               |
 |-------------------------------|--------------------------|--------------------------|
-| ![History](./readme/demo/history.png) | ![Dispense](./readme/demo/dispense.png) | ![Landing2](./readme/demo/landing2.png) |
+| ![History](./readme/demo/history.png) | ![Dispense](./readme/demo/dispense.png) | ![Landing2](./readme/demo/landing2.png) | -->
 
 <br><br>
 
