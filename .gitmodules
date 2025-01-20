@@ -1,0 +1,3 @@
+[submodule "PharmaVend-app"]
+	path = PharmaVend-app
+	url = https://github.com/jeanpierrenashef/PharmaVend-app

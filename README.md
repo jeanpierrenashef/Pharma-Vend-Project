@@ -24,6 +24,8 @@
 <!-- Tech stack -->
 <img src="./readme/title3.svg"/>
 
+> PharmaVend thrived using the below stacks
+
 ###  PharmaVend is -built using the following technologies:
 
 - This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
@@ -46,7 +48,6 @@
 <br><br>
 <!-- UI UX -->
 <img src="./readme/title4.svg"/>
-
 
 > We designed PharmaVend using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 
@@ -71,6 +72,8 @@
 <!-- Database Design -->
 <img src="./readme/title5.svg"/>
 
+> Below you can see PharmaVend's DB design:
+
 ###  Architecting Data Excellence: Innovative Database Design Strategies:
 
 - Insert ER Diagram here
@@ -85,6 +88,8 @@
 
 <!-- Implementation -->
 <img src="./readme/title6.svg"/>
+
+> Below you can see PharmaVend in action:
 
 
 ### User Screens (Mobile)
@@ -181,7 +186,13 @@ Machine Deployment
 - This project employs rigorous unit testing methodologies to ensure the reliability and accuracy of code components. By systematically evaluating individual units of the software, we guarantee a robust foundation, identifying and addressing potential issues early in the development process.
 
 <br><br> -->
+<img src="./readme/title11.svg"/>
 
+> To build PharmaVend prototype, follow these steps:
+
+### Electrical Components Connections
+### Mechanical Engineering Design
+### Real Time Demo
 
 <!-- How to run -->
 <img src="./readme/title10.svg"/>
