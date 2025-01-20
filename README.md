@@ -76,11 +76,21 @@
 
 
 ### User Screens (Mobile)
-| Login screen  | Register screen | Landing screen | Loading screen |
-| ---| ---| ---| ---|
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
-| Home screen  | Menu Screen | Order Screen | Checkout Screen |
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
+| Login Screen                | Register Screen               | Landing Screen              |
+|-------------------------------|--------------------------|--------------------------|
+| ![Login](./readme/demo/login.png) | ![Register](./readme/demo/signup.png) | ![Landing](./readme/demo/landing.png) |
+
+| Other Landing Screen                | Home Screen             | Map Screen           |
+|-------------------------------|--------------------------|--------------------------|
+| ![Other Landing](./readme/demo/landing2.png) | ![Home](./readme/demo/home.png) | ![Map](./readme/demo/map.png) |
+
+| Product Detail Screen                | Cart Screen          | Checkout Screen               |
+|-------------------------------|--------------------------|--------------------------|
+| ![Product Detail](./readme/demo/details.png) | ![Cart](./readme/demo/cart.png) | ![Checkout](./readme/demo/checkout.png) |
+
+| History Screen                | Dispense Screen          | Notification Screen               |
+|-------------------------------|--------------------------|--------------------------|
+| ![History](./readme/demo/history.png) | ![Dispense](./readme/demo/dispense.png) | ![Notification](./readme/demo/notification.png) |
 
 ### Admin Screens (Web)
 | Login screen  | Register screen |  Landing screen |
