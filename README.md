@@ -266,6 +266,14 @@ Machine Deployment
 
 
 ### Mechanical Engineering Design
+- The design was initially modeled using SOLIDWORKS, a mechanical engineering design software. This process facilitated the transition from digital design and modeling of the system to manufacturing and assembling the actual components.
+
+Visual Overview of the system
+![Solidworks image](./readme/demo/system.jpg)
+
+Interactive Walkthrough of the system
+
+![Solidworks gif](./readme/demo/sw-demo.gif)
 ### Real Time Demo
 
 <!-- How to run -->
