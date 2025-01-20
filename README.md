@@ -107,6 +107,7 @@
 | ![Checkout](./readme/demo/maps.gif) | 
 
 ### Admin Screens (Web)
+#### Visual Overview
 | Dashboard Screen #1  | Dashboard Screen #2 |
 | ---| ---|
 | ![Dashboard Screen #1](./readme/demo/dashboard1.png) | ![Dashboard Screen #2](./readme/demo/dashboard2.png) |
@@ -127,6 +128,15 @@
 | ---| ---|
 | ![Customers Screen #1](./readme/demo/customers1.png) | ![Customers Screen #2](./readme/demo/customers2.png) |
 
+#### Interactive Walkthrough
+
+| Machine Navigation | 
+| ---| ---|
+| ![Admin #1](./readme/demo/admin1.gif) |
+
+| Machine Deployment | 
+| ---| ---|
+| ![Admin #2](./readme/demo/admin2.gif) |
 <br><br>
 
 
