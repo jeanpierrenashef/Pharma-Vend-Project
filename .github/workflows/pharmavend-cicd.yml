@@ -13,7 +13,7 @@ jobs:
       working-directory: PharmaVend-server/
       run: | 
         echo "Switch to laravel"
-        composer remove google/apiclient-services
+        composer update
         composer install
        
     - uses: nathanheffley/laravel-phpunit-action@master
