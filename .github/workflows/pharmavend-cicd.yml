@@ -1,0 +1,32 @@
+name: PharmaVend-Workflow
+on:
+  push:
+    branches: [ "master" ]
+jobs:
+  pharmavend-ci:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: PharmaVend-server/
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: recursive
+    - name: Installing libraries
+      run: | 
+        composer update
+        composer install
+        php artisan test
+       
+    # - uses: nathanheffley/laravel-phpunit-action@master
+    
+    
+        
+  pharmavend-cd:
+     needs: pharmavend-ci
+     runs-on: ubuntu-latest
+     steps:
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo Hello, world!
+       
