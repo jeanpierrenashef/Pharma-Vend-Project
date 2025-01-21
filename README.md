@@ -42,6 +42,8 @@
 - The project leverages [Firebase](https://console.firebase.google.com/), a comprehensive app development platform by Google, known for its wide array of tools and services:
   - [Google Sign in](https://firebase.google.com/docs/auth/android/google-signin): Integrated for secure and quick user authentication using Google accounts.
   - [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging): Used for dispatching notifications to enhance user interaction and app communication.
+- For secure and efficient payment processing, the application integrates [Stripe](https://stripe.com), a powerful online payment platform, enabling financial transactions within the app.
+
 - The IoT integration is powered by the [Arduino Platform](https://www.arduino.cc/), utilizing the [ESP32 microcontroller](https://www.espressif.com/en/products/socs/esp32) to control actuators for precise and reliable dispensing of products.
 
 
@@ -51,7 +53,7 @@
 
 > We designed PharmaVend using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 
-- Project Figma design [figma](https://www.figma.com/design/7ouYeUwMOHD4Q3yAhSmUx7/Final-project?node-id=0-1&p=f&t=3UV9S1T6sdou9NPQ-0)
+- Project [Figma](https://www.figma.com/design/7ouYeUwMOHD4Q3yAhSmUx7/Final-project?node-id=0-1&p=f&t=3UV9S1T6sdou9NPQ-0) design.
 
 ### Mockups
 
@@ -74,7 +76,6 @@
 
 > Below you can see PharmaVend's DB design:
 
-###  Architecting Data Excellence: Innovative Database Design Strategies:
 
 
 <p align="center">
@@ -96,30 +97,30 @@
 |-------------------------------|--------------------------|--------------------------|
 | ![Login](./readme/demo/login.png) | ![Register](./readme/demo/signup.png) | ![Landing](./readme/demo/landing.png) |
 
-| Other Landing Screen                | Home Screen             | Map Screen           |
+| Notification Screen                | Home Screen             | Map Screen           |
 |-------------------------------|--------------------------|--------------------------|
-| ![Other Landing](./readme/demo/landing2.png) | ![Home](./readme/demo/home.png) | ![Map](./readme/demo/map.png) |
+| ![Notification Screen](./readme/demo/notification.png) | ![Home](./readme/demo/home.png) | ![Map](./readme/demo/map.png) |
 
 | Product Detail Screen                | Cart Display Screen          | Checkout Screen               |
 |-------------------------------|--------------------------|--------------------------|
 | ![Product Detail](./readme/demo/details.png) | ![Cart](./readme/demo/cart.png) | ![Checkout](./readme/demo/checkout.png) |
 
-| User History Screen                | Product Dispense Screen          | Notification Screen               |
-|-------------------------------|--------------------------|--------------------------|
-| ![History](./readme/demo/history.png) | ![Dispense](./readme/demo/dispense.png) | ![Notification](./readme/demo/notification.png) |
+| User History Screen                | Product Dispense Screen          |
+|-------------------------------|--------------------------|
+| <img src="./readme/demo/history.png" alt="History" height="556"> | <img src="./readme/demo/dispense.png" alt="Dispense" height="556"> | | 
 
 #### Interactive Walkthrough
 | Sign Up Demo                | Google Signin Demo               | Find Closest Machine               | 
 |-------------------------------|--------------------------|--------------------------|
 | ![Sign up](./readme/demo/signup.gif) | ![Google](./readme/demo/googlesignin.gif) | ![Closest](./readme/demo/closest.gif) | 
 
-| Checkout Demo                | Search medicine Demo               | Notification Update               | 
+| Order Demo                | Search medicine Demo               | Notification Update               | 
 |-------------------------------|--------------------------|--------------------------|
-| ![Checkout](./readme/demo/paymedicine.gif) | ![Search](./readme/demo/search.gif) | ![Notification](./readme/demo/notification.gif) | 
+| ![Order](./readme/demo/order-demo.gif) | ![Search](./readme/demo/search.gif) | ![Notification](./readme/demo/notification.gif) | 
 
-| Map Navigation Demo                | 
-|-------------------------------|
-| ![Checkout](./readme/demo/maps.gif) | 
+| Closest Map Navigation              | Machine Map Navigation       |  Pay Online Demo      |
+|-------------------------------|-------------------------------|-------------------------------|
+| ![Map 1](./readme/demo/map1-demo.gif) | ![Map 2](./readme/demo/map2-demo.gif) | ![Pay](./readme/demo/pay-demo.gif) |
 
 ### Admin Screens (Web)
 #### Visual Overview
@@ -145,13 +146,25 @@
 
 #### Interactive Walkthrough
 
+Dashboard Dashboard
+
+![Admin #1](./readme/demo/dashboardNavigation.gif)
+
 Machine Navigation 
 
-![Admin #1](./readme/demo/admin1.gif)
+![Admin #2](./readme/demo/machineNavigation.gif)
 
-Machine Deployment
+Machine Create
 
-![Admin #2](./readme/demo/admin2.gif)
+![Admin #3](./readme/demo/machineCreate.gif)
+
+Machine Handeling
+
+![Admin #4](./readme/demo/handleMachine.gif)
+
+Charts Navigation
+
+![Admin #4](./readme/demo/adminNavigation.gif)
 
 ### Customer Screen (Web)
 ![Customer](./readme/demo/customerweb.gif)
@@ -280,7 +293,8 @@ Interactive Walkthrough of the system
 #### I. Dispensing from mobile
    - The user is 13 meters away from the Ghobeiri Machine, when they try to dispense an order they placed in Jbeil, it doesnt allow them. After that the user then dispenses Magnessium in the Ghobeiry pharmacy.
 
-![Dispense](./readme/demo/dispensing.gif)
+
+<img src="./readme/demo/dispensing.gif" alt="Dispense" height="556"> 
 
 #### II. Real Life Demo grabbing the Magnessium medicine.
    - The robotic system recieves the signal, and the Stepper motor navigates the platfrom to the Magnessium shelf, activates the Linear motor and the Magnessium medicine is pushed down to be collected.
