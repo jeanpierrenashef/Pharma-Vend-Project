@@ -5,14 +5,15 @@ on:
 jobs:
   pharmavend-ci:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: PharmaVend-server/
     steps:
     - uses: actions/checkout@v1
       with:
         submodules: recursive
-    - name: Switching to server directory
-      working-directory: PharmaVend-server/
+    - name: Installing libraries
       run: | 
-        echo "Switch to laravel"
         composer update
         composer install
        
