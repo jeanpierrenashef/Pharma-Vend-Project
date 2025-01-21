@@ -11,6 +11,7 @@ jobs:
         submodules: recursive
     - name: Switching to server directory
       working-directory: PharmaVend-server/
+      run: echo "Switch to laravel"
     - uses: nathanheffley/laravel-phpunit-action@master
     
     
