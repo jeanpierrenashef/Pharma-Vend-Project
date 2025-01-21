@@ -16,8 +16,9 @@ jobs:
       run: | 
         composer update
         composer install
+        php artisan test
        
-    - uses: nathanheffley/laravel-phpunit-action@master
+    # - uses: nathanheffley/laravel-phpunit-action@master
     
     
         
