@@ -64,6 +64,8 @@ jobs:
         source: "PharmaVend-server/"
         target: "/var/www/html/PharmaVend-server/"
         SCRIPT_AFTER: |
+         echo "Starting deployment verification..."
          cd /var/www/html/PharmaVend-server/
          touch deployment_successful.txt
          echo "Deployment completed successfully" > deployment_successful.txt
+         ls -la /var/www/html/PharmaVend-server/
