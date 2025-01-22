@@ -43,9 +43,9 @@ jobs:
   pharmavend-cd:
     needs: pharmavend-ci
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: PharmaVend-server/
+    # defaults:
+    #   run:
+    #     working-directory: PharmaVend-server/
 
     steps: 
     - name: Checkout PharmaVend-server subdirectory only
@@ -58,17 +58,18 @@ jobs:
 
     - name: Move contents to correct directory
       run: |
-        echo "Moving PharmaVend-server contents..."
-        mv PharmaVend-server/* . || true
-        rm -rf PharmaVend-server || true
-        ls -R
+          echo "Moving PharmaVend-server contents..."
+          mv ${{ github.workspace }}/PharmaVend-server/* ${{ github.workspace }}/ || true
+          rm -rf ${{ github.workspace }}/PharmaVend-server || true
+          echo "Listing contents after moving:"
+          ls -R ${{ github.workspace }}
 
     - name: Verify Repository Contents
       run: |
-        echo "Checking current directory:"
-        pwd
-        echo "Listing contents of current directory:"
-        ls -R
+          echo "Checking current directory:"
+          pwd
+          echo "Listing contents of current directory:"
+          ls -R
 
     - name: Deployment
       uses: easingthemes/ssh-deploy@main
@@ -76,7 +77,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        source: "."
+        source: "${{ github.workspace }}/"
         target: "/var/www/html/PharmaVend-server"
         SCRIPT_AFTER: |
           echo "Starting deployment verification..."
