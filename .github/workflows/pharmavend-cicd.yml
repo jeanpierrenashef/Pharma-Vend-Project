@@ -43,9 +43,9 @@ jobs:
   pharmavend-cd:
     needs: pharmavend-ci
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: PharmaVend-server/
+    # defaults:
+    #   run:
+    #     working-directory: PharmaVend-server/
 
     steps: 
     - uses: actions/checkout@v4.2.0
