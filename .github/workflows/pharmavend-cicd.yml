@@ -58,6 +58,8 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        source: "./PharmaVend-server/"
+        target: "/var/www/html/"
         SCRIPT_AFTER: |
           touch jeanpierre.txt
           echo "i was here"
