@@ -51,16 +51,14 @@ jobs:
     - uses: actions/checkout@v4.2.0
       with:
           submodules: false
-          sparse-checkout: |
-           PharmaVend-server
+          sparse-checkout: PharmaVend-server/
           sparse-checkout-cone-mode: false
           
-    - name: Debug Checkout Path
+    - name: Verify Repository Contents
       run: |
-        echo "Current working directory:"
-        pwd
-        echo "Listing files in the working directory:"
-        ls -la
+        echo "Checking contents of PharmaVend repo..."
+        ls -R /home/runner/work/PharmaVend/
+
 
 
     - name: Deployment
