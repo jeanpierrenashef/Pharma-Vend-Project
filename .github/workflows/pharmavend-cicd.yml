@@ -93,7 +93,7 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 20
+          port: 22
           script: |
             cd /var/www/html/PharmaVend-server/
             git clone https://github.com/jeanpierrenashef/PharmaVend-server.git
