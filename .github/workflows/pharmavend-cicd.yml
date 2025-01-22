@@ -53,6 +53,7 @@ jobs:
           submodules: false
           sparse-checkout: |
            PharmaVend-server
+          sparse-checkout-cone-mode: false
         
 
     - name: Deployment
@@ -61,7 +62,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        source: "PharmaVend-server/"
+        source: "./"
         target: "/var/www/html/PharmaVend-server/"
         SCRIPT_AFTER: |
          echo "Starting deployment verification..."
