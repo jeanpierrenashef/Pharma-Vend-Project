@@ -57,7 +57,6 @@ jobs:
           
     - name: Debug Checkout Path
       run: ls -R
-     
 
     - name: Deployment
       uses: easingthemes/ssh-deploy@main
@@ -65,11 +64,11 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        source: "./"
+        source: "."
         target: "/var/www/html/PharmaVend-server/"
         SCRIPT_AFTER: |
          echo "Starting deployment verification..."
          cd /var/www/html/PharmaVend-server/
-         sudo touch deployment_successful.txt
+         sudo touch deployment_successful_1.txt
          sudo echo "Deployment completed successfully" > deployment_successful.txt
          ls -la /var/www/html/PharmaVend-server/
