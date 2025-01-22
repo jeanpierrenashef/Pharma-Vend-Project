@@ -199,6 +199,96 @@ Postman to ensure the server's functionality and responsiveness across various u
 | ---| ---|
 | ![AWS Get Product](./readme/demo/AWS-getProduct.png) | ![AWS Get Transaction](./readme/demo/AWS-getTransactions.png) |
 
+#### AWS EC2 Server Deployment (Laravel)
+
+1. Install [PuTTY](https://www.putty.org/)
+2. If necessary transform .pem to .ppk file using [PuTTYgen](https://www.puttygen.com/)
+3. Open PuTTY and connect to the server using SSH
+4. Install essential packages and dependencies
+   ```sh
+   sudo apt update && sudo apt upgrade -y
+   sudo apt install -y php-cli php-mbstring php-xml php-bcmath php-curl php-zip \ apache2 mysql-server unzip curl git composer
+   ```
+5. Set Up Apache and MySQL
+   ```sh
+   sudo a2enmod rewrite 
+   sudo systemctl restart apache2
+   ```
+6. Clone the Laravel Project
+   ```sh
+   cd /var/www/html/
+   sudo git clone https://github.com/jeanpierrenashef/PharmaVend-server/
+   cd PharmaVend-server
+   ```
+7. Install and Configure Composer
+   ```sh
+   curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+   sudo composer update
+   sudo composer install   
+   ```
+8. Configure Environment File
+   ```sh
+   sudo cp .env.example .env
+   sudo nano .env
+   sudo php artisan key:generate
+   ```
+9. Apache Configurations:
+   - Navigate to:
+      ```sh
+      sudo nano /etc/apache2/sites-enabled/000-default.conf
+      ```
+   - Add the following:
+      ```sh
+      <Directory /var/www/html/PharmaVend-server/public>
+         Options Indexes FollowSymLinks
+         AllowOverride all
+         Require all granted
+      </Directory>
+      ```
+   - Then Navigate to:
+      ```sh
+      sudo nano /etc/apache2/sites-enabled/000-default.conf
+      ```
+   - Add the following:
+      ```sh
+      ServerAdmin webmaster@localhost 
+      DocumentRoot /var/www/html/PharmaVend-server/public
+      ```
+   - After all that you have to restart:
+      ```sh
+      sudo service apache2 restart
+      ```
+10. Adjust permissions to allow Laravel to write to necessary directories.
+      ```sh
+      sudo chgrp -R www-data storage bootstrap/cache
+      sudo chmod -R ug+rwx storage bootstrap/cache
+      ```
+- (Optional incase of any errors faced)
+   ```sh
+   sudo apt install apache2 libapache2-mod-php
+   sudo a2enmod rewrite sudo a2ensite laravel.conf 
+   sudo systemctl restart apache2
+   ```
+11. Reset MySQL root password for initial setup. (Ubuntu installed SQL without asking for password, so i had to force reset our SQL password)
+<br>In order to do, these steps were followed:
+      ```sh
+      sudo mysql
+      ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_secure_password';
+      FLUSH PRIVILEGES;
+      EXIT;
+      ```
+      - To verify that the new MySQL password works:
+         ```sh
+         mysql -u root -p
+         ```
+12. Execute Laravel migrations to set up the database schema:
+      ```sh
+      php artisan migrate
+      ```
+13. Populate the database with initial data:
+      ```sh
+      php artisan db:seed
+      ```
 <br><br>
 
 <!-- Unit Testing -->
@@ -226,6 +316,35 @@ Postman to ensure the server's functionality and responsiveness across various u
 </p>
 
 <br><br>
+
+
+
+<img src="./readme/title12.svg"/>
+
+### Streamlining Development with GitHub Actions: Seamless CI/CD Integration
+
+- To ensure the reliability and efficiency of PharmaVend, we have implemented a comprehensive CI/CD pipeline using GitHub Actions. This automated process streamlines our workflow, enhancing code quality and accelerating deployment cycles.
+
+1. **Local Unit Testing**
+   - Initially, unit tests were conducted locally on the PharmaVend project to verify and ensure the expected functionality of various methods. This step helped catch potential issues early in the development cycle. (This step is displayed in the previous section **Unit Testing**)
+<br>
+2. **Continuous Integration (CI) on GitHub**
+   - Once the local tests were successful, the code was pushed to GitHub, where automated tests were triggered on a remote machine. This process verifies the integrity of the codebase in an isolated environment, ensuring compatibility across different platforms and configurations.
+![CI](./readme/demo/ci-test.png)
+<br>
+3. **Continuous Deployment (CD) to the Server**
+   - Upon successful completion of the CI phase, the code was automatically deployed to the production server. The deployment process ensures that the PharmaVend server receives the latest tested and validated code without manual intervention. This automation guarantees consistency and minimizes downtime.
+![CD](./readme/demo/cd-test.png)
+<br>
+- By leveraging GitHub Actions, we have established an automated pipeline where every code push is rigorously tested and seamlessly deployed. 
+<p align="center">
+  <img src="./readme/demo/cicd-success.png" alt="CICD">
+</p>
+
+<br><br>
+
+
+
 
 <img src="./readme/title11.svg"/>
 
@@ -468,95 +587,6 @@ This is an example of how to list things you need to use the software and how to
 
 <br>
 
-#### AWS EC2 Server Deployment (Laravel)
 
-1. Install [PuTTY](https://www.putty.org/)
-2. If necessary transform .pem to .ppk file using [PuTTYgen](https://www.puttygen.com/)
-3. Open PuTTY and connect to the server using SSH
-4. Install essential packages and dependencies
-   ```sh
-   sudo apt update && sudo apt upgrade -y
-   sudo apt install -y php-cli php-mbstring php-xml php-bcmath php-curl php-zip \ apache2 mysql-server unzip curl git composer
-   ```
-5. Set Up Apache and MySQL
-   ```sh
-   sudo a2enmod rewrite 
-   sudo systemctl restart apache2
-   ```
-6. Clone the Laravel Project
-   ```sh
-   cd /var/www/html/
-   sudo git clone https://github.com/jeanpierrenashef/PharmaVend-server/
-   cd PharmaVend-server
-   ```
-7. Install and Configure Composer
-   ```sh
-   curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-   sudo composer update
-   sudo composer install   
-   ```
-8. Configure Environment File
-   ```sh
-   sudo cp .env.example .env
-   sudo nano .env
-   sudo php artisan key:generate
-   ```
-9. Apache Configurations:
-   - Navigate to:
-      ```sh
-      sudo nano /etc/apache2/sites-enabled/000-default.conf
-      ```
-   - Add the following:
-      ```sh
-      <Directory /var/www/html/PharmaVend-server/public>
-         Options Indexes FollowSymLinks
-         AllowOverride all
-         Require all granted
-      </Directory>
-      ```
-   - Then Navigate to:
-      ```sh
-      sudo nano /etc/apache2/sites-enabled/000-default.conf
-      ```
-   - Add the following:
-      ```sh
-      ServerAdmin webmaster@localhost 
-      DocumentRoot /var/www/html/PharmaVend-server/public
-      ```
-   - After all that you have to restart:
-      ```sh
-      sudo service apache2 restart
-      ```
-10. Adjust permissions to allow Laravel to write to necessary directories.
-      ```sh
-      sudo chgrp -R www-data storage bootstrap/cache
-      sudo chmod -R ug+rwx storage bootstrap/cache
-      ```
-- (Optional incase of any errors faced)
-   ```sh
-   sudo apt install apache2 libapache2-mod-php
-   sudo a2enmod rewrite sudo a2ensite laravel.conf 
-   sudo systemctl restart apache2
-   ```
-11. Reset MySQL root password for initial setup. (Ubuntu installed SQL without asking for password, so i had to force reset our SQL password)
-<br>In order to do, these steps were followed:
-      ```sh
-      sudo mysql
-      ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_secure_password';
-      FLUSH PRIVILEGES;
-      EXIT;
-      ```
-      - To verify that the new MySQL password works:
-         ```sh
-         mysql -u root -p
-         ```
-12. Execute Laravel migrations to set up the database schema:
-      ```sh
-      php artisan migrate
-      ```
-13. Populate the database with initial data:
-      ```sh
-      php artisan db:seed
-      ```
 <br><br>
 And with all that you should be able to run PharmaVend and explore all its features. 
