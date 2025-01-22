@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.2.0
         with:
           submodules: recursive
 
@@ -38,11 +38,26 @@ jobs:
       - name: Run Laravel Tests
         run: php artisan test
 
+
+
   pharmavend-cd:
     needs: pharmavend-ci
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: PharmaVend-server/
 
-    steps:
-      - uses: actions/checkout@v2
-      - name: Deploy Step or Additional Commands
-        run: echo "Deploy your application or other steps"
+    steps: 
+    - uses: actions/checkout@v4.2.0
+      with:
+          submodules: recursive
+
+    - name: Deployment
+      uses: easingthemes/ssh-deploy@main
+      env: 
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        SCRIPT_AFTER: |
+          touch jeanpierre.txt
+          echo "i was here"
