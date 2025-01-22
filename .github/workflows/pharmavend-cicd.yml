@@ -23,16 +23,19 @@ jobs:
         run: |
           composer install --prefer-dist --no-progress --no-suggest
 
-      - name: Set up SQLite Database
+      - name: Prepare Environment
         run: |
           mkdir -p database
           touch database/database.sqlite
-          echo "DB_CONNECTION=sqlite" > .env
-          echo "DB_DATABASE=${{ github.workspace }}/PharmaVend-server/database/database.sqlite" >> .env
-          php artisan migrate
-          php artisan db:seed # If you use seeders
-
-      - name: Run PHPUnit Tests
+          echo "APP_ENV=local" >> .env  # Explicitly set the environment to local
+          echo "APP_KEY=base64:$(php artisan --no-ansi key:generate --show)" >> .env
+          echo "DB_CONNECTION=sqlite" >> .env
+          echo "DB_DATABASE=/home/runner/work/PharmaVend/PharmaVend/PharmaVend-server/database/database.sqlite" >> .env
+      - name: Migrate Database
+        run: php artisan migrate --force  # Use --force to bypass the production warning
+      - name: Seed Database
+        run: php artisan db:seed --force  # Use --force if seeding is necessary
+      - name: Run Tests
         run: php artisan test
 
   pharmavend-cd:
