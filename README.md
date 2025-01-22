@@ -201,14 +201,32 @@ Postman to ensure the server's functionality and responsiveness across various u
 
 <br><br>
 
-<!-- Unit Testing
+<!-- Unit Testing -->
 <img src="./readme/title9.svg"/>
 
-###  Precision in Development: Harnessing the Power of Unit Testing:
+###  Harnessing the Power of Unit Testing:
 
 - This project employs rigorous unit testing methodologies to ensure the reliability and accuracy of code components. By systematically evaluating individual units of the software, we guarantee a robust foundation, identifying and addressing potential issues early in the development process.
 
-<br><br> -->
+| Unit Test 1  | Unit Test 2 |
+| ---| ---|
+| ![Unit Test 1](./readme/demo/unit-test1.png) | ![Unit Test 2](./readme/demo/unit-test2.png) |
+
+| Unit Test 3  | Unit Test 4 |
+| ---| ---|
+| ![Unit Test 3](./readme/demo/unit-test3.png) | ![Unit Test 4](./readme/demo/unit-test4.png) |
+
+- We implemented feature tests using Laravel's built-in testing framework, which is powered by PHPUnit. These tests simulated real-world scenarios and interactions with the application, allowing us to verify all our methods.
+
+- From the output of the php artisan test command, it is evident that tests have passed.
+
+
+<p align="center">
+  <img src="./readme/demo/unit-test-pass.png" alt="Unit-Test">
+</p>
+
+<br><br>
+
 <img src="./readme/title11.svg"/>
 
 > To build PharmaVend prototype, follow these steps:
