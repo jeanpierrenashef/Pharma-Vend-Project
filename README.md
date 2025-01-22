@@ -122,6 +122,8 @@
 |-------------------------------|-------------------------------|-------------------------------|
 | ![Map 1](./readme/demo/map1-demo.gif) | ![Map 2](./readme/demo/map2-demo.gif) | ![Pay](./readme/demo/pay-demo.gif) |
 
+<br>
+
 ### Admin Screens (Web)
 #### Visual Overview
 | Dashboard Screen #1  | Dashboard Screen #2 |
@@ -168,6 +170,8 @@ Charts Navigation
 
 ### Customer Screen (Web)
 ![Customer](./readme/demo/customerweb.gif)
+
+
 <br><br>
 
 
@@ -180,7 +184,6 @@ Charts Navigation
 
 <br><br> -->
 
-AWS Deployment
 <img src="./readme/title8.svg"/>
 
 ###  Unleashing the Potential with AWS Integration:
@@ -195,6 +198,7 @@ Postman to ensure the server's functionality and responsiveness across various u
 | Get Product  | Get Transaction |
 | ---| ---|
 | ![AWS Get Product](./readme/demo/AWS-getProduct.png) | ![AWS Get Transaction](./readme/demo/AWS-getTransactions.png) |
+
 <br><br>
 
 <!-- Unit Testing
