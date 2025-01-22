@@ -88,18 +88,15 @@ jobs:
     steps:
       - name: Checkout the files
         uses: actions/checkout@v4
-      - name: Install SSH client
-        run: sudo apt-get install -y openssh-client
-      - name: Add SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-
-      - name: Verify SSH connection
-        run: | 
-          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} 'echo "SSH connection successful"'
-          cd /var/www/html/PharmaVend-server/
-          git pull https://${{ secrets.GH_TOKEN }}@github.com/jeanpierrenashef/PharmaVend-server.git main
+      - uses: appleboy/ssh-action@master 
+        with: 
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 20
+          script: |
+            cd /var/www/html/PharmaVend-server/
+            git clone https://github.com/jeanpierrenashef/PharmaVend-server.git
+     
     
 
