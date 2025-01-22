@@ -56,7 +56,14 @@ jobs:
           sparse-checkout-cone-mode: false
           
     - name: Debug Checkout Path
-      run: ls -R
+      run: |
+        echo "Current working directory:"
+        pwd
+        echo "Listing files in working directory:"
+        ls -la
+        echo "Listing contents inside PharmaVend-server:"
+        ls -la PharmaVend-server/
+
 
     - name: Deployment
       uses: easingthemes/ssh-deploy@main
@@ -64,7 +71,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        source: "."
+        source: "./"
         target: "/var/www/html/PharmaVend-server/"
         SCRIPT_AFTER: |
          echo "Starting deployment verification..."
