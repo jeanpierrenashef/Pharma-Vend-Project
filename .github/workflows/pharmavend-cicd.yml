@@ -57,7 +57,8 @@ jobs:
     - name: Verify Repository Contents
       run: |
         echo "Checking contents of PharmaVend repo..."
-        ls -R /home/runner/work/PharmaVend/
+        ls -R /home/runner/work/PharmaVend/PharmaVend-server
+
 
 
 
@@ -67,7 +68,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        source: "./"
+        source: "./PharmaVend-server/"
         target: "/var/www/html/PharmaVend-server/"
         SCRIPT_AFTER: |
          echo "Starting deployment verification..."
