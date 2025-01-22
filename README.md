@@ -446,14 +446,18 @@ Interactive Walkthrough of the system
 #### I. Dispensing from mobile
    - The user is 13 meters away from the Ghobeiri Machine, when they try to dispense an order they placed in Jbeil, it doesnt allow them. After that the user then dispenses Magnessium in the Ghobeiry pharmacy.
 
-
-<img src="./readme/demo/dispensing.gif" alt="Dispense" height="556"> 
+<p align="center">
+   <img src="./readme/demo/dispensing.gif" alt="Dispense" height="556"> 
+</p>
 
 #### II. Real Life Demo grabbing the Magnessium medicine.
-   - The robotic system recieves the signal, and the Stepper motor navigates the platfrom to the Magnessium shelf, activates the Linear motor and the Magnessium medicine is pushed down to be collected.
+   - The robotic system recieves the signal, and the Stepper motor navigates the platfrom to the Magnessium shelf, activates the Linear motor and the **Magnessium medicine** is pushed down to be collected.
 
-![Demo](./readme/demo/sw-demd.cdd)
+<p align="center">
+  <img src="./readme/demo/demo-vid.gif" alt="Demo">
+</p>
 
+<br><br>
 <!-- How to run -->
 <img src="./readme/title10.svg"/>
 
