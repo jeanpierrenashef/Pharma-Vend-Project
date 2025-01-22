@@ -59,10 +59,8 @@ jobs:
       run: |
         echo "Current working directory:"
         pwd
-        echo "Listing files in working directory:"
+        echo "Listing files in the working directory:"
         ls -la
-        echo "Listing contents inside PharmaVend-server:"
-        ls -la PharmaVend-server/
 
 
     - name: Deployment
