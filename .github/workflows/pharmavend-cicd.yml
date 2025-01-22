@@ -97,9 +97,9 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
 
       - name: Verify SSH connection
-        run: ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} 'echo "SSH connection successful"'
-      - name: Deploy and Run PharmaVend App on EC2
-        run: |
-            cd /var/www/html/PharmaVend-server/
-            git pull https://${{ secrets.GH_TOKEN }}@github.com/jeanpierrenashef/PharmaVend-server.git main
+        run: | 
+          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} 'echo "SSH connection successful"'
+          cd /var/www/html/PharmaVend-server/
+          git pull https://${{ secrets.GH_TOKEN }}@github.com/jeanpierrenashef/PharmaVend-server.git main
+    
 
