@@ -50,7 +50,10 @@ jobs:
     steps: 
     - uses: actions/checkout@v4.2.0
       with:
-          submodules: recursive
+          submodules: false
+          sparse-checkout: |
+           PharmaVend-server
+        
 
     - name: Deployment
       uses: easingthemes/ssh-deploy@main
@@ -58,8 +61,9 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        source: "./PharmaVend-server/"
-        target: "/var/www/html/"
+        source: "PharmaVend-server/"
+        target: "/var/www/html/PharmaVend-server/"
         SCRIPT_AFTER: |
-          touch jeanpierre.txt
-          echo "i was here"
+         cd /var/www/html/PharmaVend-server/
+         touch deployment_successful.txt
+         echo "Deployment completed successfully" > deployment_successful.txt
