@@ -330,11 +330,15 @@ Postman to ensure the server's functionality and responsiveness across various u
 <br>
 2. **Continuous Integration (CI) on GitHub**
    - Once the local tests were successful, the code was pushed to GitHub, where automated tests were triggered on a remote machine. This process verifies the integrity of the codebase in an isolated environment, ensuring compatibility across different platforms and configurations.
+
 ![CI](./readme/demo/ci-test.png)
+
 <br>
 3. **Continuous Deployment (CD) to the Server**
    - Upon successful completion of the CI phase, the code was automatically deployed to the production server. The deployment process ensures that the PharmaVend server receives the latest tested and validated code without manual intervention. This automation guarantees consistency and minimizes downtime.
+
 ![CD](./readme/demo/cd-test.png)
+
 <br>
 - By leveraging GitHub Actions, we have established an automated pipeline where every code push is rigorously tested and seamlessly deployed. 
 <p align="center">
