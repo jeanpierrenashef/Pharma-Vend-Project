@@ -54,7 +54,10 @@ jobs:
           sparse-checkout: |
            PharmaVend-server
           sparse-checkout-cone-mode: false
-        
+          
+    - name: Debug Checkout Path
+      run: ls -R
+     
 
     - name: Deployment
       uses: easingthemes/ssh-deploy@main
