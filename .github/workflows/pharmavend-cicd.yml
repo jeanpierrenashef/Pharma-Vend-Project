@@ -43,20 +43,33 @@ jobs:
   pharmavend-cd:
     needs: pharmavend-ci
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: PharmaVend-server/
+    # defaults:
+    #   run:
+    #     working-directory: PharmaVend-server/
 
     steps: 
-    - uses: actions/checkout@v4.2.0
+    - name: Checkout PharmaVend-server subdirectory only
+      uses: actions/checkout@v4.2.0
       with:
           submodules: false
           sparse-checkout: |
-           PharmaVend-server
+            PharmaVend-server
           sparse-checkout-cone-mode: false
-          
-    - name: Debug Checkout Path
-      run: ls -R
+
+    - name: Move contents to correct directory
+      run: |
+          echo "Moving PharmaVend-server contents..."
+          mv ${{ github.workspace }}/PharmaVend-server/* ${{ github.workspace }}/ || true
+          rm -rf ${{ github.workspace }}/PharmaVend-server || true
+          echo "Listing contents after moving:"
+          ls -R ${{ github.workspace }}
+
+    - name: Verify Repository Contents
+      run: |
+          echo "Checking current directory:"
+          pwd
+          echo "Listing contents of current directory:"
+          ls -R
 
     - name: Deployment
       uses: easingthemes/ssh-deploy@main
@@ -64,11 +77,12 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        source: "."
-        target: "/var/www/html/PharmaVend-server/"
+        source: "${{ github.workspace }}/"
+        target: "/var/www/html/PharmaVend-server"
         SCRIPT_AFTER: |
-         echo "Starting deployment verification..."
-         cd /var/www/html/PharmaVend-server/
-         sudo touch deployment_successful_1.txt
-         sudo echo "Deployment completed successfully" > deployment_successful.txt
-         ls -la /var/www/html/PharmaVend-server/
+          echo "Starting deployment verification..."
+          cd /var/www/html/PharmaVend-server/
+          sudo touch deployment_successful_1.txt
+          sudo echo "Deployment completed successfully" > deployment_successful.txt
+          ls -la /var/www/html/PharmaVend-server/
+
