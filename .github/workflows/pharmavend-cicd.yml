@@ -66,6 +66,6 @@ jobs:
         SCRIPT_AFTER: |
          echo "Starting deployment verification..."
          cd /var/www/html/PharmaVend-server/
-         touch deployment_successful.txt
-         echo "Deployment completed successfully" > deployment_successful.txt
+         sudo touch deployment_successful.txt
+         sudo echo "Deployment completed successfully" > deployment_successful.txt
          ls -la /var/www/html/PharmaVend-server/
