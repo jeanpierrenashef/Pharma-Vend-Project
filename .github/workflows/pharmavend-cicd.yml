@@ -24,10 +24,10 @@ jobs:
       - name: Prepare Environment
         run: |
           mkdir -p database
-          touch database/database.mysql
+          touch database/database.sqlite
           echo "APP_KEY=base64:$(php artisan key:generate --show)" >> .env
-          echo "DB_CONNECTION=mysql" >> .env
-          echo "DB_DATABASE=${{ github.workspace }}/PharmaVend-server/database/database.mysql" >> .env
+          echo "DB_CONNECTION=sqlite" >> .env
+          echo "DB_DATABASE=${{ github.workspace }}/PharmaVend-server/database/database.sqlite" >> .env
           echo "JWT_SECRET=$(php artisan jwt:secret --show)" >> .env  
 
       - name: Migrate and Seed Database
