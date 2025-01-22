@@ -53,14 +53,14 @@ jobs:
           submodules: false
           sparse-checkout: PharmaVend-server/
           sparse-checkout-cone-mode: false
+
           
     - name: Verify Repository Contents
       run: |
-        echo "Checking contents of PharmaVend repo..."
-        ls -R /home/runner/work/PharmaVend/PharmaVend-server
-
-
-
+        echo "Checking current directory:"
+        pwd
+        echo "Listing contents of current directory:"
+        ls -R
 
     - name: Deployment
       uses: easingthemes/ssh-deploy@main
