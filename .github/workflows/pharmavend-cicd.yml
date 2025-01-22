@@ -1,7 +1,9 @@
 name: PharmaVend-Workflow
+
 on:
   push:
     branches: [ "master" ]
+
 jobs:
   pharmavend-ci:
     runs-on: ubuntu-latest
@@ -9,24 +11,22 @@ jobs:
       run:
         working-directory: PharmaVend-server/
     steps:
-    - uses: actions/checkout@v1
-      with:
-        submodules: recursive
-    - name: Installing libraries
-      run: | 
-        composer update
-        composer install
-        php artisan test
-       
-    # - uses: nathanheffley/laravel-phpunit-action@master
-    
-    
-        
+      - uses: actions/checkout@v2
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0' # Specify the PHP version you are using
+          extensions: mbstring, pdo_sqlite
+          coverage: none
+      - name: Install Composer Dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+      - name: Execute tests
+        run: php artisan test
+
   pharmavend-cd:
-     needs: pharmavend-ci
-     runs-on: ubuntu-latest
-     steps:
-      - uses: actions/checkout@v4
-      - name: Run a one-line script
-        run: echo Hello, world!
-       
+    needs: pharmavend-ci
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy
+        run: echo "Deployment steps go here"
