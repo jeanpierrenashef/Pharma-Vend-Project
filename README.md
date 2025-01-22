@@ -180,14 +180,22 @@ Charts Navigation
 
 <br><br> -->
 
-<!-- AWS Deployment
+AWS Deployment
 <img src="./readme/title8.svg"/>
 
-###  Efficient AI Deployment: Unleashing the Potential with AWS Integration:
+###  Unleashing the Potential with AWS Integration:
 
-- This project leverages AWS deployment strategies to seamlessly integrate and deploy natural language processing models. With a focus on scalability, reliability, and performance, we ensure that AI applications powered by these models deliver robust and responsive solutions for diverse use cases.
+- This project utilizes AWS deployment strategies, specifically using an EC2 instance to host and manage the [Laravel server](https://github.com/jeanpierrenashef/PharmaVend-server), focusing on scalability, reliability, and performance. Additionally, testing was conducted using 
+Postman to ensure the server's functionality and responsiveness across various use cases. 
 
-<br><br> -->
+| Login  | Add Machine |
+| ---| ---|
+| ![AWS Login](./readme/demo/AWS-login.png) | ![Add Machine](./readme/demo/AWS-addMachine.png) |
+
+| Get Product  | Get Transaction |
+| ---| ---|
+| ![AWS Get Product](./readme/demo/AWS-getProduct.png) | ![AWS Get Transaction](./readme/demo/AWS-getTransactions.png) |
+<br><br>
 
 <!-- Unit Testing
 <img src="./readme/title9.svg"/>
@@ -359,6 +367,9 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    php artisan serve
    ```
+
+<br>
+
 #### Application Configuration (Flutter)
 
 1. Install Flutter SDK
@@ -391,6 +402,8 @@ This is an example of how to list things you need to use the software and how to
    flutter run
    ```
 
+<br>
+
 #### Admin Panel Configuration (ReactJS)
 
 1. Navigate to PharmaVend-adminPanel directory
@@ -412,6 +425,8 @@ This is an example of how to list things you need to use the software and how to
    npm run start
    ```
 
+<br>
+
 #### Arduino Configuration
 
 1. Navigate to PharmaVend-IoT directory
@@ -429,4 +444,97 @@ This is an example of how to list things you need to use the software and how to
 
 3. Follow the steps mentioned above in the IoT System section for connections
 
-Now, you should be able to run PharmaVend locally and explore its features.
+<br>
+
+#### AWS EC2 Server Deployment (Laravel)
+
+1. Install [PuTTY](https://www.putty.org/)
+2. If necessary transform .pem to .ppk file using [PuTTYgen](https://www.puttygen.com/)
+3. Open PuTTY and connect to the server using SSH
+4. Install essential packages and dependencies
+   ```sh
+   sudo apt update && sudo apt upgrade -y
+   sudo apt install -y php-cli php-mbstring php-xml php-bcmath php-curl php-zip \ apache2 mysql-server unzip curl git composer
+   ```
+5. Set Up Apache and MySQL
+   ```sh
+   sudo a2enmod rewrite 
+   sudo systemctl restart apache2
+   ```
+6. Clone the Laravel Project
+   ```sh
+   cd /var/www/html/
+   sudo git clone https://github.com/jeanpierrenashef/PharmaVend-server/
+   cd PharmaVend-server
+   ```
+7. Install and Configure Composer
+   ```sh
+   curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+   sudo composer update
+   sudo composer install   
+   ```
+8. Configure Environment File
+   ```sh
+   sudo cp .env.example .env
+   sudo nano .env
+   sudo php artisan key:generate
+   ```
+9. Apache Configurations:
+   - Navigate to:
+      ```sh
+      sudo nano /etc/apache2/sites-enabled/000-default.conf
+      ```
+   - Add the following:
+      ```sh
+      <Directory /var/www/html/PharmaVend-server/public>
+         Options Indexes FollowSymLinks
+         AllowOverride all
+         Require all granted
+      </Directory>
+      ```
+   - Then Navigate to:
+      ```sh
+      sudo nano /etc/apache2/sites-enabled/000-default.conf
+      ```
+   - Add the following:
+      ```sh
+      ServerAdmin webmaster@localhost 
+      DocumentRoot /var/www/html/PharmaVend-server/public
+      ```
+   - After all that you have to restart:
+      ```sh
+      sudo service apache2 restart
+      ```
+10. Adjust permissions to allow Laravel to write to necessary directories.
+      ```sh
+      sudo chgrp -R www-data storage bootstrap/cache
+      sudo chmod -R ug+rwx storage bootstrap/cache
+      ```
+- (Optional incase of any errors faced)
+   ```sh
+   sudo apt install apache2 libapache2-mod-php
+   sudo a2enmod rewrite sudo a2ensite laravel.conf 
+   sudo systemctl restart apache2
+   ```
+11. Reset MySQL root password for initial setup. (Ubuntu installed SQL without asking for password, so i had to force reset our SQL password)
+<br>In order to do, these steps were followed:
+      ```sh
+      sudo mysql
+      ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_secure_password';
+      FLUSH PRIVILEGES;
+      EXIT;
+      ```
+      - To verify that the new MySQL password works:
+         ```sh
+         mysql -u root -p
+         ```
+12. Execute Laravel migrations to set up the database schema:
+      ```sh
+      php artisan migrate
+      ```
+13. Populate the database with initial data:
+      ```sh
+      php artisan db:seed
+      ```
+<br><br>
+And with all that you should be able to run PharmaVend and explore all its features. 
