@@ -15,7 +15,7 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4' # Specify your PHP version here
+          php-version: '8.2.12' # Specify your PHP version here
           extensions: mbstring, xml, ctype, json, sqlite3, pdo_sqlite
           coverage: none
           
