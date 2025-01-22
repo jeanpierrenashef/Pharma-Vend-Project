@@ -24,17 +24,18 @@ jobs:
       - name: Prepare Environment
         run: |
           mkdir -p database
-          touch database/database.sqlite
-          echo "APP_ENV=testing" >> .env  # Set the environment to testing
+          touch database/database.mysql
           echo "APP_KEY=base64:$(php artisan key:generate --show)" >> .env
-          echo "DB_CONNECTION=sqlite" >> .env
-          echo "DB_DATABASE=${{ github.workspace }}/PharmaVend-server/database/database.sqlite" >> .env
-          echo "JWT_SECRET=$(php artisan jwt:secret --show)" >> .env  # Ensure the JWT secret is set
+          echo "DB_CONNECTION=mysql" >> .env
+          echo "DB_DATABASE=${{ github.workspace }}/PharmaVend-server/database/database.mysql" >> .env
+          echo "JWT_SECRET=$(php artisan jwt:secret --show)" >> .env  
 
-      - name: Migrate Database
-        run: php artisan migrate --force
+      - name: Migrate and Seed Database
+        run: | 
+         php artisan migrate --force
+         php artisan db:seed --force
 
-      - name: Run Tests
+      - name: Run Laravel Tests
         run: php artisan test
 
   pharmavend-cd:
