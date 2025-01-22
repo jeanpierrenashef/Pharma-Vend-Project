@@ -2,46 +2,52 @@ name: PharmaVend-Workflow
 on:
   push:
     branches: [ "master" ]
+
 jobs:
   pharmavend-ci:
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: PharmaVend-server/
+
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout code
+        uses: actions/checkout@v2  # Updated to use the latest stable version of checkout
         with:
           submodules: recursive
+
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2.12' # Specify your PHP version here
+          php-version: '8.2'  # Simplified to just specify the major and minor version
           extensions: mbstring, xml, ctype, json, sqlite3, pdo_sqlite
           coverage: none
-          
+          tools: composer:v2  # Ensure Composer v2 is used
+
       - name: Install Composer Dependencies
-        run: |
-          composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Prepare Environment
         run: |
           mkdir -p database
           touch database/database.sqlite
-          echo "APP_ENV=local" >> .env  # Explicitly set the environment to local
-          echo "APP_KEY=base64:$(php artisan --no-ansi key:generate --show)" >> .env
+          echo "APP_ENV=testing" >> .env  # Set the environment to testing
+          echo "APP_KEY=base64:$(php artisan key:generate --show)" >> .env
           echo "DB_CONNECTION=sqlite" >> .env
-          echo "DB_DATABASE=/home/runner/work/PharmaVend/PharmaVend/PharmaVend-server/database/database.sqlite" >> .env
+          echo "DB_DATABASE=${{ github.workspace }}/PharmaVend-server/database/database.sqlite" >> .env
+          echo "JWT_SECRET=$(php artisan jwt:secret --show)" >> .env  # Ensure the JWT secret is set
+
       - name: Migrate Database
-        run: php artisan migrate --force  # Use --force to bypass the production warning
-      - name: Seed Database
-        run: php artisan db:seed --force  # Use --force if seeding is necessary
+        run: php artisan migrate --force  # Use --force to apply migrations
+
       - name: Run Tests
         run: php artisan test
 
   pharmavend-cd:
     needs: pharmavend-ci
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2  # Updated to v2 for checkout in the CD job as well
       - name: Deploy Step or Additional Commands
         run: echo "Deploy your application or other steps"
