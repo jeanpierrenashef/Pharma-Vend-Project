@@ -7,7 +7,7 @@
 
 > A smart pharmaceutical vending machine that aims to address the unavailability of basic pharmaceuticals and ensure their accessibility in situations where pharmacies are closed or unavailable. By integrating microcontrollers, actuators, and advanced technologies, we automate the dispensing and payment processes to provide convenience and reliability.
 >
-> Our solution features an interactive robotic system and an AI-trained model for pattern recognition across various areas. Additionally, we offer a user-friendly interface that helps users locate nearby vending machines and enables real-time communication with the system. This approach streamlines access to essential pharmaceuticals and enhances the overall user experience.
+>Our application offers users interactive real-time tracking map that allows them to locate and navigate to vending machines with complete route guidance and live updates. This project includes an interactive robotic system that simulates customer-device communication with our vending machines. And our customers are always updated through push notifications about new stock additions to nearby vending machines.
 
 ### User Stories
 
