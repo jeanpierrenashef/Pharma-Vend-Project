@@ -17,7 +17,9 @@ jobs:
           submodules: recursive
 
       - name: Install Composer Dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: |
+          composer update
+          composer install
 
       - name: Prepare Environment
         run: |
